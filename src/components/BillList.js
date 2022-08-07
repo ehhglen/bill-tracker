@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BillItem from './BillItem';
 
 class BillList extends Component {
     constructor(props) {
@@ -43,6 +44,7 @@ class BillList extends Component {
                     <button type='submit'>Add</button>
                 </form>
             </div>
+            <BillItem entries={this.state.items}></BillItem>
          </div>
         );
     }

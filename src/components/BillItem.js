@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class BillItem extends React.Component {
+class BillItem extends Component {
+    createBills(item) {
+        return <li key={item.key}> {item.text} </li>
+    }
     render() {
+        var billEntries = this.props.entries;
+        var billItems = billEntries.map(this.createBills);
+
         return (
-            <div> 
-                <h3>This is a bill</h3>
-            </div>
+            <ul className='theList'>
+                {billItems}
+            </ul>
         );
- 
     } 
-}
+
+};
 
 export default BillItem
